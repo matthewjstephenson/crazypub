@@ -1,0 +1,308 @@
+(* Matthew James Stephenson *)
+(* McGill ID: 261289768 *)
+
+
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     12069,        294]
+NotebookOptionsPosition[     11478,        271]
+NotebookOutlinePosition[     11833,        287]
+CellTagsIndexPosition[     11790,        284]
+WindowFrame->Normal
+ContainsDynamic->False*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sols", " ", "=", " ", 
+   RowBox[{"First", "[", 
+    RowBox[{"NDSolve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"f", "''"}], "[", "s", "]"}], " ", "+", " ", 
+            RowBox[{"2", "*", 
+             RowBox[{
+              RowBox[{"f", "'"}], "[", "s", "]"}]}], "+", 
+            RowBox[{"f", "[", "s", "]"}], "-", 
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              FractionBox["0.01", "2"]}], ")"}], "+", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"g", "[", "s", "]"}], ")"}], "^", "2"}], 
+             RowBox[{"4", "*", "s"}]]}], ")"}], "*", 
+          SuperscriptBox["\[ExponentialE]", 
+           RowBox[{"-", "s"}]]}], " ", "\[Equal]", " ", "0"}], ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           SubscriptBox["\[PartialD]", "s"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             SubscriptBox["\[PartialD]", "s"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"g", "[", "s", "]"}], "*", 
+               SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                 RowBox[{"-", "0.5"}], "*", "s"}]]}], ")"}]}], ")"}]}], "-", 
+          RowBox[{
+           FractionBox[
+            RowBox[{"g", "[", "s", "]"}], "4"], "*", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "0.5"}], "*", "s"}]]}], "-", 
+          RowBox[{
+           FractionBox[
+            RowBox[{"2", "*", 
+             RowBox[{"g", "[", "s", "]"}]}], 
+            RowBox[{"s", "^", "2"}]], "*", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "0.5"}], "*", "s"}]]}], "+", 
+          RowBox[{
+           FractionBox[
+            RowBox[{
+             RowBox[{"f", "[", "s", "]"}], "*", 
+             RowBox[{"g", "[", "s", "]"}]}], 
+            RowBox[{"4", "*", "s"}]], "*", 
+           SuperscriptBox["\[ExponentialE]", 
+            RowBox[{
+             RowBox[{"-", "0.5"}], "*", "s"}]]}]}], "\[Equal]", "0"}], ",", 
+        " ", 
+        RowBox[{
+         RowBox[{"f", "[", "0", "]"}], " ", "\[Equal]", "0"}], ",", 
+        RowBox[{
+         RowBox[{
+          FractionBox[
+           RowBox[{"g", "[", "s", "]"}], "s"], "\[Equal]", "0"}], "/.", 
+         RowBox[{"s", "\[Rule]", "0"}]}], ",", 
+        RowBox[{
+         RowBox[{"f", "[", "20", "]"}], "\[Equal]", "0.000001"}], ",", 
+        RowBox[{
+         RowBox[{"g", "[", "20", "]"}], "\[Equal]", "0.000001"}]}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"f", ",", "g"}], "}"}], ",", "s", ",", " ", 
+      RowBox[{"Method", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Shooting\>\"", ",", " ", 
+         RowBox[{"\"\<StartingInitialConditions\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{
+             RowBox[{
+              RowBox[{"f", "'"}], "[", "20", "]"}], " ", "\[Equal]", " ", 
+             "0"}], ",", " ", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"g", "'"}], "[", "20", "]"}], "\[Equal]", "0"}], ",", 
+            RowBox[{
+             RowBox[{"f", "[", "20", "]"}], "\[Equal]", "0.000001"}], ",", 
+            RowBox[{
+             RowBox[{"g", "[", "20", "]"}], "\[Equal]", "0.000001"}]}], " ", 
+           "}"}]}]}], "}"}]}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Evaluate", "[", 
+    RowBox[{
+     RowBox[{"f", "[", "s", "]"}], " ", "/.", " ", "sols"}], "]"}], ",", " ", 
+   
+   RowBox[{"{", 
+    RowBox[{"s", ",", "0", ",", "10"}], "}"}], ",", " ", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Black", ",", " ", "Blue", ",", " ", "Green"}], "}"}]}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.4183116611974983`*^9, 3.418312171483713*^9}, {
+  3.418312202542164*^9, 3.418312330395199*^9}, {3.418312385507917*^9, 
+  3.418312386979113*^9}, {3.41831250421099*^9, 3.4183125546986837`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Power", "::", "\<\"infy\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Infinite expression \\!\\(1\\/0\\) encountered. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/infy\\\", \
+ButtonNote -> \\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.418312216892848*^9, {3.418312247245789*^9, 3.418312259698133*^9}, 
+   3.418312331449195*^9, 3.418312557562398*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NDSolve", "::", "\<\"deqn\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Equation or list of equations expected instead of \
+\\!\\(False\\) in the first argument \
+\\!\\({\\(\\(\\(\\(\[ExponentialE]\\^\\(-s\\)\\\\ \\(\\((\\(\\(-1.005`\\)\\) \
++ \\(\\(f[s]\\)\\) + \\(\[LeftSkeleton] 1 \[RightSkeleton]\\)\\^2\\/\\(4\\\\ \
+s\\) + \\(\\(2\\\\ \\(\\(\\(\\(\\*SuperscriptBox[\\\"f\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]]\\)\\)[s]\\)\\)\\)\\) + \
+\\(\\(\\(\\(\\*SuperscriptBox[\\\"f\\\", \\\"\[Prime]\[Prime]\\\", \
+Rule[MultilineFunction, None]]\\)\\)[s]\\)\\))\\)\\)\\)\\) \[Equal] 0\\)\\), \
+\\(\\(\\(\\(\[LeftSkeleton] 1 \[RightSkeleton]\\)\\) \[Equal] 0\\)\\), \\(\\(\
+\[LeftSkeleton] 3 \[RightSkeleton]\\)\\), \\(\\(\\(\\(g[20]\\)\\) \[Equal] \
+1.`*^-6\\)\\)}\\). \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\
+\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/NDSolve/deqn\\\", ButtonNote -> \
+\\\"NDSolve::deqn\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.418312216892848*^9, {3.418312247245789*^9, 3.418312259698133*^9}, 
+   3.418312331449195*^9, 3.41831255756446*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReplaceAll", "::", "\<\"reps\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\({\\(\\(\\(\\(\[ExponentialE]\\^\\(-s\\)\\\\ \
+\\(\\((\\(\\(-1.005`\\)\\) + \\(\\(f[s]\\)\\) + \\(\[LeftSkeleton] 1 \
+\[RightSkeleton]\\)\\^2\\/\\(4\\\\ s\\) + \\(\\(2\\\\ \
+\\(\\(\\(\\(\\*SuperscriptBox[\\\"f\\\", \\\"\[Prime]\\\", \
+Rule[MultilineFunction, None]]\\)\\)[s]\\)\\)\\)\\) + \
+\\(\\(\\(\\(\\*SuperscriptBox[\\\"f\\\", \\\"\[Prime]\[Prime]\\\", \
+Rule[MultilineFunction, None]]\\)\\)[s]\\)\\))\\)\\)\\)\\) \[Equal] 0\\)\\), \
+\\(\\(\\(\\(\[LeftSkeleton] 1 \[RightSkeleton]\\)\\) \[Equal] 0\\)\\), \\(\\(\
+\[LeftSkeleton] 3 \[RightSkeleton]\\)\\), \\(\\(\\(\\(g[20]\\)\\) \[Equal] \
+1.`*^-6\\)\\)}\\) is neither a list of replacement rules nor a valid dispatch \
+table, and so cannot be used for replacing. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
+\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.418312216892848*^9, {3.418312247245789*^9, 3.418312259698133*^9}, 
+   3.418312331449195*^9, 3.4183125575664873`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReplaceAll", "::", "\<\"reps\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\({\\(\[LeftSkeleton] 1 \[RightSkeleton]\\)}\\) is \
+neither a list of replacement rules nor a valid dispatch table, and so cannot \
+be used for replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\", ButtonNote -> \
+\\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.418312216892848*^9, {3.418312247245789*^9, 3.418312259698133*^9}, 
+   3.418312331449195*^9, 3.418312557568515*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReplaceAll", "::", "\<\"reps\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"\\!\\({\\(\\(\\(\\(0.99979573515062`\\\\ \
+\\(\\((\\(\\(-1.005`\\)\\) + \\(\\(\[LeftSkeleton] 3 \[RightSkeleton]\\)\\) + \
+\\(\\(\\(\\(\\*SuperscriptBox[\\\"f\\\", \\\"\[Prime]\[Prime]\\\", \
+Rule[MultilineFunction, \
+None]]\\)\\)[0.0002042857142857143`]\\)\\))\\)\\)\\)\\) \[Equal] 0.`\\)\\), \
+\\(\\(\[LeftSkeleton] 5 \[RightSkeleton]\\)\\)}\\) is neither a list of \
+replacement rules nor a valid dispatch table, and so cannot be used for \
+replacing. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/ReplaceAll/reps\\\
+\", ButtonNote -> \\\"ReplaceAll::reps\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.418312216892848*^9, {3.418312247245789*^9, 3.418312259698133*^9}, 
+   3.418312331449195*^9, 3.418312557618126*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"General", "::", "\<\"stop\"\>"}], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \\!\\(ReplaceAll :: \\\"reps\\\"\\) will \
+be suppressed during this calculation. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
+ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.418312216892848*^9, {3.418312247245789*^9, 3.418312259698133*^9}, 
+   3.418312331449195*^9, 3.4183125576677856`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  GraphicsComplexBox[{{2.0408163265306121`*^-7, 0.}, {0.19628661201530398`, 
+   0.}, {0.40908357085458646`, 0.}, {0.6077788357015209, 0.}, {
+   0.8025764881887605, 0.}, {1.013884691581611, 0.}, {1.2110912009821138`, 
+   0.}, {1.4248082612882276`, 0.}, {1.6346277092346464`, 0.}, {
+   1.8303454631887173`, 0.}, {2.0425737680483995`, 0.}, {2.240700378915734, 
+   0.}, {2.434929377423373, 0.}, {2.645668926836623, 0.}, {2.842306782257525, 
+   0.}, {3.0554551885840384`, 0.}, {3.264705982550857, 0.}, {
+   3.459855082525327, 0.}, {3.6715147334054086`, 0.}, {3.869072690293142, 
+   0.}, {4.083141198086486, 0.}, {4.293312093520136, 0.}, {4.489381294961437, 
+   0.}, {4.70196104730835, 0.}, {4.900439105662914, 0.}, {5.095019551657784, 
+   0.}, {5.306110548558265, 0.}, {5.503099851466398, 0.}, {5.716599705280141, 
+   0.}, {5.92620194673419, 0.}, {6.121702494195891, 0.}, {6.333713592563203, 
+   0.}, {6.531622996938168, 0.}, {6.725634788953437, 0.}, {6.936157131874317, 
+   0.}, {7.13257778080285, 0.}, {7.345508980636994, 0.}, {7.54433848647879, 
+   0.}, {7.7392703799608915`, 0.}, {7.950712824348604, 0.}, {
+   8.148053574743969, 0.}, {8.361904876044944, 0.}, {8.571858564986224, 0.}, {
+   8.767710559935155, 0.}, {8.980073105789698, 0.}, {9.178333957651894, 0.}, {
+   9.372697197154395, 0.}, {9.583570987562506, 0.}, {9.78034308397827, 0.}, {
+   9.993625731299645, 0.}, {9.999999795918367, 0.}}, {}],
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{{0, 10}, {0., 0.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.418312217777444*^9, 3.418312259751547*^9}, 
+   3.41831233156874*^9, 3.418312557718753*^9}]
+}, Open  ]]
+},
+WindowSize->{959, 686},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification->1.5,
+FrontEndVersion->"6.0 for Mac OS X x86 (32-bit) (April 20, 2007)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[590, 23, 4132, 112, 323, "Input"],
+Cell[4725, 137, 499, 10, 55, "Message"],
+Cell[5227, 149, 1162, 20, 89, "Message"],
+Cell[6392, 171, 1190, 20, 117, "Message"],
+Cell[7585, 193, 624, 12, 56, "Message"],
+Cell[8212, 207, 917, 16, 83, "Message"],
+Cell[9132, 225, 557, 11, 32, "Message"],
+Cell[9692, 238, 1770, 30, 343, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
